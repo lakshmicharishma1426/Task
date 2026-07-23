@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Management</title>
+<style>
+  body{background:#0b1220;color:#e8ecf3;font-family:Arial,sans-serif;margin:0;}
+  .wrap{display:flex;}
+  .sidebar{width:200px;padding:20px;border-right:1px solid #1e2c44;min-height:100vh;}
+  .sidebar h4{color:#7c8aa5;font-size:11px;margin:10px 0;}
+  .sidebar a{display:block;color:#7c8aa5;padding:8px 10px;border-radius:6px;text-decoration:none;margin-bottom:2px;}
+  .sidebar a.active{background:#1a2438;color:#e0a92d;font-weight:bold;}
+  .filter{display:flex;justify-content:space-between;padding:8px 10px;color:#7c8aa5;}
+  .main{flex:1;padding:20px;}
+  .top{display:flex;justify-content:space-between;padding-bottom:15px;border-bottom:1px solid #1e2c44;margin-bottom:20px;}
+  h1{font-size:24px;margin:0;}
+  .btn{background:#e0a92d;color:#241a05;border:none;padding:10px 18px;border-radius:6px;font-weight:bold;cursor:pointer;}
+  .stats{display:flex;gap:15px;margin-bottom:20px;}
+  .card{flex:1;background:#101a2c;border:1px solid #1e2c44;border-top:2px solid #e0a92d;border-radius:6px;padding:15px;}
+  .card small{color:#7c8aa5;}
+  .num{font-size:24px;font-weight:bold;}
+  input,select{padding:10px;background:#101a2c;border:1px solid #1e2c44;color:#fff;border-radius:6px;}
+  input{width:60%;margin-right:10px;}
+  table{width:100%;border-collapse:collapse;background:#101a2c;border:1px solid #1e2c44;border-radius:8px;margin-top:15px;}
+  th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #1e2c44;font-size:14px;}
+  th{color:#7c8aa5;font-size:12px;}
+  .badge{padding:3px 10px;border-radius:12px;font-size:12px;}
+  .admin{background:#e0a92d33;color:#e0a92d;}
+  .editor{background:#39c0c833;color:#39c0c8;}
+  .viewer{color:#7c8aa5;border:1px solid #1e2c44;}
+  .dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:5px;}
+  .active{background:#3ecf8e;}
+  .invited{background:#e0a92d;}
+  .suspended{background:#e3597a;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="sidebar">
+    <h4>ADMIN</h4>
+    <a href="#">Overview</a>
+    <a href="#" class="active">Users</a>
+    <a href="#">Roles &amp; Permissions</a>
+    <a href="#">Billing</a>
+    <a href="#">Audit Log</a>
+
+    <h4>FILTERS</h4>
+    <div class="filter"><span>All members</span><span>142</span></div>
+    <div class="filter"><span>Active</span><span>128</span></div>
+    <div class="filter"><span>Invited</span><span>9</span></div>
+    <div class="filter"><span>Suspended</span><span>5</span></div>
+  </div>
+
+  <div class="main">
+    <div class="top">
+      <h1>User Management</h1>
+      <button class="btn">+ Invite user</button>
+    </div>
+
+    <div class="stats">
+      <div class="card"><small>TOTAL</small><div class="num">142</div>registered users</div>
+      <div class="card"><small>ACTIVE</small><div class="num">128</div>last 30 days</div>
+      <div class="card"><small>NEW</small><div class="num">+16</div>this month</div>
+      <div class="card"><small>ADMINS</small><div class="num">6</div>admin role</div>
+    </div>
+
+    <input type="text" placeholder="Search by name or email...">
+    <select><option>All roles</option></select>
+    <select><option>All status</option></select>
+
+    <table>
+      <tr><th>USER</th><th>ID</th><th>ROLE</th><th>STATUS</th><th>JOINED</th></tr>
+
+      <tr>
+        <td>Ananya Rao<br><small style="color:#7c8aa5;">ananya@fieldwork.app</small></td>
+        <td>USR-001</td>
+        <td><span class="badge admin">Admin</span></td>
+        <td><span class="dot active"></span>Active</td>
+        <td>Feb 12, 2024</td>
+      </tr>
+
+      <tr>
+        <td>Vikram Kulkarni<br><small style="color:#7c8aa5;">vikram@fieldwork.app</small></td>
+        <td>USR-014</td>
+        <td><span class="badge editor">Editor</span></td>
+        <td><span class="dot active"></span>Active</td>
+        <td>Apr 03, 2024</td>
+      </tr>
+
+      <tr>
+        <td>Marcus Jenkins<br><small style="color:#7c8aa5;">marcus@fieldwork.app</small></td>
+        <td>USR-035</td>
+        <td><span class="badge editor">Editor</span></td>
+        <td><span class="dot invited"></span>Invited</td>
+        <td>Jun 01, 2024</td>
+      </tr>
+
+      <tr>
+        <td>Rohan Seth<br><small style="color:#7c8aa5;">rohan@fieldwork.app</small></td>
+        <td>USR-063</td>
+        <td><span class="badge viewer">Viewer</span></td>
+        <td><span class="dot suspended"></span>Suspended</td>
+        <td>Aug 14, 2024</td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
